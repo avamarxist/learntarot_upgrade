@@ -133,3 +133,5 @@ rel_df = pd.DataFrame(related)
 rel_df.columns = ['Root Card','Related Card','Relationship'] 
 desc_df = pd.DataFrame(card_desc)
 desc_df.columns = ['Root Card','Desc','Desc Type']
+
+print(cards_df.head())
