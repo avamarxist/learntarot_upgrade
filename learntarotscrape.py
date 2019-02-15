@@ -30,11 +30,17 @@ titles = []
 for head in page_soup.findAll('b'):             #loop through each <b> tag
     headstr = str(head)                         #convert the tag to a string
     #print(headstr)
-    title_search = re.compile('(?<=\s|\>)\w+')  
+    title_search = re.compile('(?<=\s|\>).+(?=\<)')
     title = title_search.search(headstr)        #return the part of the tag after the > (plus whitespace)
     if(title != None):
         #print(headstr[title.start():title.end()])
-        titles.append(headstr[title.start():title.end()])
+        title_text = headstr[title.start():title.end()]
+        title_text = title_text.replace('[','')
+        title_text = title_text.replace(']','')
+        title_text = title_text.replace('-','')
+        title_text = title_text.strip()
+        title_text = title_text.title()
+        titles.append(title_text)
 
 
 titles[24:38] = [(title + " of Wands") for title in titles[24:38]]
@@ -67,6 +73,7 @@ keywords=[]
 opposing=[]
 reinforcing = []
 descs = []
+#desc_len = []
 for link in scrape_df['Links']:
     if link[0] == 't':
         keywords.append('-')
@@ -86,33 +93,48 @@ for link in scrape_df['Links']:
             keywords.append(str(tags_u[0]))
             opposing.append(str(tags_u[1]))
             reinforcing.append(str(tags_u[2]))
-        
+
         tags_p = page_soup.findAll('p')
-        for p in tags_p:
-            p_search = re.compile('\<p\>(?!=\<)').search(str(p))
-            p_text = str(p)[p_search.start():p_search.end()]
-            descs.append('-')
+        no_hit = True
+        count = -1
+        while no_hit:
+            p = tags_p[count]
+            tag_search = re.compile('howdesc').search(str(p))
+            if tag_search == None:
+                count += -1
+            else:
+                no_hit = False
+        p = tags_p[count + 1]
 
-scrape_df['Keywords'] = keywords   
+        hr_search = re.compile('\<hr').search(str(p))
+        desc_text = str(p)[:hr_search.start()]
+        desc_text = bs(desc_text, "html.parser").text
+        desc_text = desc_text.replace('\r','')
+        desc_text = desc_text.replace('\n','')
+        descs.append(desc_text)
+        #desc_len.append(len(desc_text))
+
+scrape_df['Keywords'] = keywords
 scrape_df['Opposing'] = opposing
-scrape_df['Reinforcing'] = reinforcing 
+scrape_df['Reinforcing'] = reinforcing
 
-scrape_cols = ['Card ID','Title','Suit','Links','Small Image','Keywords','Opposing','Reinforcing','Previous']  
+scrape_cols = ['Card ID','Title','Suit','Links','Small Image','Keywords','Opposing','Reinforcing','Previous']
 scrape_df = scrape_df[scrape_cols]
-                
+
 #scrape_df.to_csv('learntarotscrape_df.csv')
 
 cards_cols = ['Card ID','Title','Suit']
 cards_df = scrape_df[cards_cols]
 
 related = []
+keys = []
 card_desc = []
 for i in scrape_df.index:
     card_temp = scrape_df['Card ID'][i]
     opp_soup = bs(scrape_df['Opposing'][i],"html.parser")
-    re_soup = bs(scrape_df['Reinforcing'][i],"html.parser")  
+    re_soup = bs(scrape_df['Reinforcing'][i],"html.parser")
     opp_search = opp_soup.find_all('a',attrs={'href':re.compile(".htm")})
-    re_search = re_soup.find_all('a',attrs={'href':re.compile(".htm")})   
+    re_search = re_soup.find_all('a',attrs={'href':re.compile(".htm")})
     for o in opp_search:
         o_title = o.get('href').split(sep='.')[0]
         related.append([card_temp,o_title,'opposing'])
@@ -121,17 +143,24 @@ for i in scrape_df.index:
         related.append([card_temp,r_title,'reinforcing'])
     if scrape_df['Previous'][i] != '-':
         related.append([card_temp, scrape_df['Previous'][i],'previous'])
-    
+
     key_soup = bs(scrape_df['Keywords'][i],"html.parser")
     key_list = key_soup.find_all('b')
     for key in key_list:
         key_search = re.compile('(?<=\>).+(?=\<)').search(str(key))
         key_text = str(key)[key_search.start():key_search.end()]
-        card_desc.append([card_temp,key_text,'Keyword'])
-    
-rel_df = pd.DataFrame(related)    
-rel_df.columns = ['Root Card','Related Card','Relationship'] 
-desc_df = pd.DataFrame(card_desc)
-desc_df.columns = ['Root Card','Desc','Desc Type']
+        keys.append([card_temp,key_text])
 
-print(cards_df.head())
+    card_desc.append([card_temp, descs[i]])
+
+rel_df = pd.DataFrame(related)
+rel_df.columns = ['Root Card','Related Card','Relationship']
+keys_df = pd.DataFrame(keys)
+keys_df.columns = ['Root Card','Keyword']
+desc_df = pd.DataFrame(card_desc)
+desc_df.columns = ['Root Card','Desc']
+
+cards_df.to_csv(path_or_buf = 'db/card_info.csv', sep = '|', index = False)
+rel_df.to_csv(path_or_buf = 'db/relations.csv', sep = '|', index = False)
+keys_df.to_csv(path_or_buf = 'db/keywords.csv', sep = '|', index = False)
+desc_df.to_csv(path_or_buf = 'db/descriptions.csv', sep = '|', index = False)

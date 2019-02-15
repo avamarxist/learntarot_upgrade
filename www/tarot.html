@@ -1,0 +1,48 @@
+
+<html>
+	<head>
+	<link rel=stylesheet href="style.css">
+	<link href="https://fonts.googleapis.com/css?family=Major+Mono+Display" rel="stylesheet">
+	<script>
+			console.log(typeof document.getElementById('cardpick'));
+			//document.getElementById('cardpick').addEventListener("keyup", showDescription)
+
+			function showDescription() {
+				var intext = document.getElementById('cardpick');
+				//document.getElementById('echo').innerHTML = intext.value;
+				console.log(intext);
+				if (typeof intext == 'undefined') {
+					$("#cardpick").innerHTML = "";
+					return;
+				} else {
+					//document.getElementById('echo').innerHTML = intext.value;
+					var xmlhttp = new XMLHttpRequest();
+					xmlhttp.onreadystatechange = function() {
+						if (this.readyState == 4 && this.status == 200) {
+							console.log(this.responseText);
+							console.log(typeof this.responseText);
+							document.getElementById('desc_text').innerHTML = this.responseText;
+						}
+					};
+					xmlhttp.open("GET", "/tarot.php?cardpick=" + intext.value, true);
+					xmlhttp.send();
+					console.log('request sent')
+				}
+			}
+	</script>
+	</head>
+	<body>
+		<h1> Learn Tarot </h1>
+
+
+
+		<form id='input'>
+			<input type="text" id="cardpick" onkeyup=showDescription()> Pick a Card </input>
+			<br></br>
+		</form>
+		<p>
+			<span id="echo"></span> <br>
+			<span id="desc_text"></span>
+		</p>
+	</body>
+</html>

@@ -1,0 +1,84 @@
+Card ID|Title|Suit
+titlema|Major Arcana|Suit
+maj00|Fool|Major
+maj01|Magician|Major
+maj02|High Priestess|Major
+maj03|Empress|Major
+maj04|Emperor|Major
+maj05|Hierophant|Major
+maj06|Lovers|Major
+maj07|Chariot|Major
+maj08|Strength|Major
+maj09|Hermit|Major
+maj10|Wheel Of Fortune|Major
+maj11|Justice|Major
+maj12|Hanged Man|Major
+maj13|Death|Major
+maj14|Temperance|Major
+maj15|Devil|Major
+maj16|Tower|Major
+maj17|Star|Major
+maj18|Moon|Major
+maj19|Sun|Major
+maj20|Judgement|Major
+maj21|World|Major
+titlew|Wands|Suit
+wa|Ace of Wands|Wands
+w2|2 of Wands|Wands
+w3|3 of Wands|Wands
+w4|4 of Wands|Wands
+w5|5 of Wands|Wands
+w6|6 of Wands|Wands
+w7|7 of Wands|Wands
+w8|8 of Wands|Wands
+w9|9 of Wands|Wands
+w10|10 of Wands|Wands
+wpg|Page of Wands|Wands
+wkn|Knight of Wands|Wands
+wqn|Queen of Wands|Wands
+wkg|King of Wands|Wands
+titlec|Cups|Suit
+ca|Ace of Cups|Cups
+c2|2 of Cups|Cups
+c3|3 of Cups|Cups
+c4|4 of Cups|Cups
+c5|5 of Cups|Cups
+c6|6 of Cups|Cups
+c7|7 of Cups|Cups
+c8|8 of Cups|Cups
+c9|9 of Cups|Cups
+c10|10 of Cups|Cups
+cpg|Page of Cups|Cups
+ckn|Knight of Cups|Cups
+cqn|Queen of Cups|Cups
+ckg|King of Cups|Cups
+titles|Swords|Suit
+sa|Ace of Swords|Swords
+s2|2 of Swords|Swords
+s3|3 of Swords|Swords
+s4|4 of Swords|Swords
+s5|5 of Swords|Swords
+s6|6 of Swords|Swords
+s7|7 of Swords|Swords
+s8|8 of Swords|Swords
+s9|9 of Swords|Swords
+s10|10 of Swords|Swords
+spg|Page of Swords|Swords
+skn|Knight of Swords|Swords
+sqn|Queen of Swords|Swords
+skg|King of Swords|Swords
+titlep|Pentacles|Suit
+pa|Ace of Pentacles|Pentacles
+p2|2 of Pentacles|Pentacles
+p3|3 of Pentacles|Pentacles
+p4|4 of Pentacles|Pentacles
+p5|5 of Pentacles|Pentacles
+p6|6 of Pentacles|Pentacles
+p7|7 of Pentacles|Pentacles
+p8|8 of Pentacles|Pentacles
+p9|9 of Pentacles|Pentacles
+p10|10 of Pentacles|Pentacles
+ppg|Page of Pentacles|Pentacles
+pkn|Knight of Pentacles|Pentacles
+pqn|Queen of Pentacles|Pentacles
+pkg|King of Pentacles|Pentacles
