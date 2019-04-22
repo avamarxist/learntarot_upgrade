@@ -1,8 +1,9 @@
 <?php
 
-	$cardname = $_REQUEST["cardpick"];
+	#$cardname = $_REQUEST["cardpick"];
+	cardname = "c6";
 
-	$dbconn = pg_connect("host=localhost dbname=Tarot user=postgres password=dbpass");
+	$dbconn = pg_connect("host=74.65.255.235 port=5432 dbname=Tarot user=postgres password=dbpass");
 	$desc_query = pg_query($dbconn, "SELECT * FROM descriptions WHERE card_id = '$cardname';");
 	$name_query = pg_query($dbconn, "SELECT * FROM card_info WHERE card_id = '$cardname';");
 	if (!$desc_query || !$name_query) {
