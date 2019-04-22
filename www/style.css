@@ -1,5 +1,6 @@
 body {
-  background-color: #36454f;
+	background-color: #36454f;
+	color: white;
 }
 
 h1 {
@@ -11,4 +12,14 @@ h1 {
 
 #background {
   
+}
+
+.container {
+	display: flex;
+	flex-direction: column;
+}
+
+.item {
+	flex-grow: 0;
+	flex-shrink: 2;
 }

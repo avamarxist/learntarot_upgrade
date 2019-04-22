@@ -1,0 +1,86 @@
+
+<html>
+	<head>
+	<link rel=stylesheet href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Major+Mono+Display" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script type='text/javascript' src='tarot_cards.js'></script>
+    <script>
+			//console.log('text: ' + document.getElementById('cardpick').value);
+			//document.getElementById('cardpick').addEventListener("keyup", showDescription)
+            var tarot = JSON.parse(card_info);
+            //console.log(tarot);
+
+			function showDescription() {
+                var intext = document.getElementById('cardpick');
+                //console.log(intext.value)
+				if (typeof intext == 'undefined') {
+					document.getElementById("cardpick").innerHTML = "";
+					return;
+				} else {
+                    let card = card_info.filter(function(c){return c['Card ID'] == intext.value})[0]
+                    document.getElementById('name').innerHTML = card['Title'];
+                    document.getElementById('desc_text').innerHTML = card['Description'];
+                    
+                    displayActions(card['Actions']);
+				}
+            }
+            
+            function displayActions(actions) {
+                let actList = document.getElementById('actions');
+                while(actList.firstChild){
+                        actList.removeChild(actList.firstChild);
+                    }
+                actions.forEach(function(act){
+                    let act_head = createAct(act['act']);
+                    console.log(act_head);
+                    console.log(act['sub']);
+                    for (var i = 0; i < act['sub'].length; i++){
+                        let sub_act = createSubact(act['sub'][i]);
+                        console.log(sub_act);
+                        act_head.appendChild(sub_act);
+                    }
+                    actList.appendChild(act_head);
+                });
+            }
+
+            function createAct(text) {
+                let act = document.createElement('dt');
+                let actText = document.createTextNode(text);
+                act.appendChild(actText);
+                return act;
+            }
+            function createSubact(text) {
+                let act = document.createElement('dd');
+                let actText = document.createTextNode(text);
+                act.appendChild(actText);
+                return act;
+            }
+	</script>
+	</head>
+	<body>
+		<h1> Learn Tarot </h1>
+
+		<form id='input'>
+			<input type="text" id="cardpick" onkeyup=showDescription()> Pick a Card </input>
+			<br></br>
+		</form>
+
+        
+
+        <div class = 'container'>
+            <div class='row'>
+                <div class='col' id='name'></div>
+            </div>
+            <div class = 'row'>
+                <div class='col-6'>
+                    <dl id='actions'></dl>
+                </div>
+                <div class='col-6' id='desc_text'></div>
+            </div>
+        </div>
+        
+
+	</body>
+</html>

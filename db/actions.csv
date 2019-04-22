@@ -1,0 +1,283 @@
+act_id|root_card|act_text
+1|maj00|beginning
+2|maj00|being spontaneous
+3|maj00|having faith
+4|maj00|embracing folly
+5|maj01|taking action
+6|maj01|acting consciously
+7|maj01|concentrating
+8|maj01|experiencing power
+9|maj02|staying nonactive
+10|maj02|accessing the unconscious
+11|maj02|seeing the potential
+12|maj02|sensing the mystery
+13|maj03|mothering
+14|maj03|welcoming abundance
+15|maj03|experiencing the senses
+16|maj03|responding to Nature
+17|maj04|fathering
+18|maj04|emphasizing structure
+19|maj04|exercising authority
+20|maj04|regulating
+21|maj05|getting an education
+22|maj05|having a belief system
+23|maj05|conforming
+24|maj05|identifying with a group
+25|maj06|relating
+26|maj06|being sexual
+27|maj06|establishing personal beliefs
+28|maj06|determining values
+29|maj07|achieving victory
+30|maj07|using your will
+31|maj07|asserting yourself
+32|maj07|achieving hard control
+33|maj08|showing strength
+34|maj08|being patient
+35|maj08|being compassionate
+36|maj09|being introspective
+37|maj09|searching
+38|maj09|receiving/giving guidance
+39|maj10|feeling a sense of destiny
+40|maj10|being at a turning point
+41|maj10|feeling movement
+42|maj11|respecting justice
+43|maj11|assuming responsibility
+44|maj11|preparing for a decision
+45|maj12|letting go
+46|maj12|reversing
+47|maj12|suspending
+48|maj13|ending
+49|maj13|going through transition
+50|maj13|eliminating
+51|maj14|being temperate
+52|maj14|maintaining balance
+53|maj14|experiencing health
+54|maj14|combining
+55|maj15|experiencing bondage
+56|maj15|focusing on the material
+57|maj15|staying in ignorance
+58|maj15|feeling hopeless
+59|maj16|going through sudden change
+60|maj16|releasing
+61|maj16|falling down
+62|maj16|having a revelation
+63|maj17|regaining hope
+64|maj17|being inspired
+65|maj17|being generous
+66|maj17|feeling serene
+67|maj18|feeling fear
+68|maj18|believing illusions
+69|maj18|stimulating the imagination
+70|maj18|feeling bewildered
+71|maj19|becoming enlightened
+72|maj19|experiencing greatness
+73|maj19|feeling vitality
+74|maj19|having assurance
+75|maj20|making a judgment
+76|maj20|feeling reborn
+77|maj20|hearing a call
+78|maj20|finding absolution
+79|maj21|integrating
+80|maj21|accomplishing
+81|maj21|becoming involved
+82|maj21|feeling fulfilled
+83|wa|using creative force
+84|wa|showing enthusiasm
+85|wa|having confidence
+86|wa|proceeding with courage
+87|w2|having personal power
+88|w2|being bold
+89|w2|showing originality
+90|w3|exploring
+91|w3|having foresight
+92|w3|demonstrating leadership
+93|w4|celebrating
+94|w4|seeking freedom
+95|w4|feeling excited
+96|w5|disagreeing
+97|w5|experiencing competition
+98|w5|experiencing hassles
+99|w6|triumphing
+100|w6|receiving acclaim
+101|w6|feeling pride
+102|w7|being aggressive
+103|w7|being defiant
+104|w7|showing conviction
+105|w8|taking quick action
+106|w8|coming to a conclusion
+107|w8|receiving news
+108|w9|defending
+109|w9|persevering
+110|w9|showing stamina
+111|w10|overextending
+112|w10|feeling burdened
+113|w10|struggling
+114|wpg|Be Creative
+115|wpg|Be Enthusiastic
+116|wpg|Be Confident
+117|wpg|Be Courageous
+118|wkn|Charming..........Superficial
+119|wkn|Self-confident..........Cocky
+120|wkn|Daring..........Foolhardy
+121|wkn|Adventurous..........Restless
+122|wkn|Passionate..........Hot-tempered
+123|wqn|Attractive
+124|wqn|Wholehearted
+125|wqn|Energetic
+126|wqn|Cheerful
+127|wqn|Self-Assured
+128|wkg|Creative
+129|wkg|Inspiring
+130|wkg|Forceful
+131|wkg|Charismatic
+132|wkg|Bold
+133|ca|using emotional force
+134|ca|developing intuition
+135|ca|experiencing intimacy
+136|ca|proceeding with love
+137|c2|making a connection
+138|c2|calling a truce
+139|c2|acknowledging an attraction
+140|c3|feeling exuberant
+141|c3|enjoying friendship
+142|c3|valuing community
+143|c4|being self-absorbed
+144|c4|feeling apathetic
+145|c4|going within
+146|c5|suffering a loss
+147|c5|feeling bereft
+148|c5|feeling regret
+149|c6|experiencing good will
+150|c6|enjoying innocence
+151|c6|focusing on childhood
+152|c7|indulging in wishful thinking
+153|c7|having many options
+154|c7|falling into dissipation
+155|c8|seeking deeper meaning
+156|c8|moving on
+157|c8|growing weary
+158|c9|having your wish fulfilled
+159|c9|feeling satisfied
+160|c9|enjoying sensual pleasure
+161|c10|feeling joy
+162|c10|enjoying peace
+163|c10|looking to the family
+164|cpg|Be Emotional
+165|cpg|Be Intuitive
+166|cpg|Be Intimate
+167|cpg|Be Loving
+168|ckn|Romantic.....Overemotional
+169|ckn|Imaginative..........Fanciful
+170|ckn|Sensitive..........Temperamental
+171|ckn|Refined..........Over-refined</b>
+172|ckn|Introspective..........Introverted
+173|cqn|Loving
+174|cqn|Tenderhearted
+175|cqn|Intuitive
+176|cqn|Psychic
+177|cqn|Spiritual
+178|ckg|Wise
+179|ckg|Calm
+180|ckg|Diplomatic
+181|ckg|Caring
+182|ckg|Tolerant
+183|sa|using mental force
+184|sa|having fortitude
+185|sa|seeking justice
+186|sa|proceeding with truth
+187|s2|blocking emotions
+188|s2|avoiding
+189|s2|being at a stalemate
+190|s3|feeling heartbreak
+191|s3|feeling lonely
+192|s3|experiencing betrayal
+193|s4|resting
+194|s4|contemplating
+195|s4|quietly preparing
+196|s5|acting in your own self-interest
+197|s5|experiencing discord
+198|s5|witnessing open dishonor
+199|s6|feeling the blues
+200|s6|recovering
+201|s6|traveling
+202|s7|running away
+203|s7|being a lone wolf
+204|s7|choosing hidden dishonor
+205|s8|feeling restricted
+206|s8|feeling confused
+207|s8|feeling powerless
+208|s9|worrying
+209|s9|feeling guilty
+210|s9|suffering anguish
+211|s10|bottoming out
+212|s10|feeling like a victim
+213|s10|being a martyr
+214|spg|Use Your Mind
+215|spg|Be Truthful
+216|spg|Be Just
+217|spg|Have Fortitude
+218|skn|Direct..........Blunt
+219|skn|Authoritative..........Overbearing
+220|skn|Incisive..........Cutting
+221|skn|Knowledgeable..........Opinionated
+222|skn|Logical..........Unfeeling
+223|sqn|Honest
+224|sqn|Astute
+225|sqn|Forthright
+226|sqn|Witty
+227|sqn|Experienced
+228|skg|Intellectual
+229|skg|Analytical
+230|skg|Articulate
+231|skg|Just
+232|skg|Ethical
+233|pa|using material force
+234|pa|prospering
+235|pa|being practical
+236|pa|proceeding with trust
+237|p2|juggling
+238|p2|being flexible
+239|p2|having fun
+240|p3|working as a team
+241|p3|planning
+242|p3|being competent
+243|p4|wanting to possess
+244|p4|maintaining control
+245|p4|blocking change
+246|p5|experiencing hard times
+247|p5|suffering ill health
+248|p5|being rejected
+249|p6|having/not having resources</b>
+250|p6|having/not having knowledge</b>
+251|p6|having/not having power</b>
+252|p7|assessing
+253|p7|reaping a reward
+254|p7|considering a direction change
+255|p8|showing diligence
+256|p8|increasing knowledge
+257|p8|paying attention to detail
+258|p9|being disciplined
+259|p9|relying on yourself
+260|p9|pursuing refinement
+261|p10|enjoying affluence
+262|p10|seeking permanence
+263|p10|following convention
+264|ppg|Have an Effect
+265|ppg|Be Practical
+266|ppg|Be Prosperous
+267|ppg|Be Trusting/Trustworthy
+268|pkn|Unwavering..........Stubborn
+269|pkn|Cautious..........Unadventurous
+270|pkn|Thorough..........Obsessive
+271|pkn|Realistic..........Pessimistic
+272|pkn|Hard-Working..........Grinding
+273|pqn|Nurturing
+274|pqn|Bighearted
+275|pqn|Down-to-Earth
+276|pqn|Resourceful
+277|pqn|Trustworthy
+278|pkg|Enterprising
+279|pkg|Adept
+280|pkg|Reliable
+281|pkg|Supporting
+282|pkg|Steady
