@@ -1,0 +1,35 @@
+<html>
+        <link rel=stylesheet href="flex-grid-1-style.css">
+        <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script>
+        var toggle1 = new Vue({
+                el: '#act-1', data: { isHidden: false }
+            })
+        $(document).ready(function(){
+            // $("#act-1").click(function(){
+            //     $("#sact-1").toggle();
+            // });
+            $("#act-2").click(function(){
+                $("#sact-2").toggle();
+            });
+            $("#act-3").click(function(){
+                $("#sact-3").toggle();
+            });
+        })
+    </script>
+    <header> website </header>
+    <body>
+        <div class="grid">
+                <div class="name"> CARD NAME </div>
+                <div class="act" id="act-1" v-on:click="isHidden = !isHidden"> ACTION 1 </div>
+                <div class="subact" id="sact-1" v-show="isHidden"> SUBACT 1 <br> SUBACT 1 <br> SUBACT 1 </div>
+                <div class="act" id="act-2"> ACTION 2 </div>
+                <div class="subact" id="sact-2"> SUBACT 2 <br> SUBACT 2 <br> SUBACT 2 </div>
+                <div class="act" id="act-3"> ACTION 3 </div>
+                <div class="subact" id="sact-3"> SUBACT 3 <br> SUBACT 3 <br> SUBACT 3 </div>
+                <div class="opposing">Recusandae tempora ab error omnis exercitationem illo accusamus esse sit ipsa accusantium iure, possimus ducimus quis consequuntur qui corporis nobis culpa repudiandae! Suscipit, debitis. Omnis delectus at vitae laborum quos?</div>
+                <div class="reinforcing">Dolorem saepe accusamus sed placeat porro ex, ab, vel eaque libero incidunt facilis delectus, iure odio dicta error consequuntur perspiciatis quasi? Corrupti incidunt quia asperiores quo magnam at minima laudantium?</div>
+                <div class="description">Dolor ad saepe, nemo fugit tempora autem est fugiat quis porro atque nam repellendus maxime neque voluptatem rerum amet odit aspernatur voluptates iusto eos laboriosam enim vel. Eius, debitis beatae!</div>
+        </div>
+    </body>
+</html>
