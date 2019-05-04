@@ -3,7 +3,8 @@
         <ListButton v-for="card in filterSuit(cards,suit)" 
                     v-bind:key="card.cardID" 
                     v-bind:title='card.title'
-                    v-bind:cardID='card.cardID'> 
+                    v-bind:cardID='card.cardID'
+                    v-on:card-pick="$emit('card-pick')"> 
         </ListButton>
         
     </div>
@@ -21,7 +22,8 @@ export default {
     props:['suit'],
     data(){
         return{
-            cards:CardInfo
+            cards:CardInfo,
+            cardPicked:false
         }
     },
     methods:{

@@ -1,6 +1,6 @@
 <template>
     <div>
-        <button> {{title}} {{cardID}}</button>
+        <button v-on:click="$emit('card-pick')"> {{title}} {{cardID}}</button>
     </div>
 </template>
 

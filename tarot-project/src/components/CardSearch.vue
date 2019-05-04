@@ -1,8 +1,9 @@
 <template>
-    <div id='cardlist'>
+    <div id='cardlist' >
         <h1> Pick a card </h1>
         <SuitButton v-on:change-suit="suitSelect=$event"></SuitButton>
-        <CardList v-bind:suit="suitSelect" />
+        <CardList v-bind:suit="suitSelect" v-on:card-pick="cardPicked=true" v-show="cardPicked === false" />
+        <img src="..\\assets\\pkn.png" width=50 v-on:click="cardPicked=false" v-show="cardPicked === true"> Go back to card list </img>
     </div>   
 </template>
 
@@ -13,7 +14,8 @@ import SuitButton from '.\\SuitButton.vue';
 import ListButton from '.\\ListButton.vue';
 
 const Details = {};
-console.log('Suit selected: ')
+console.log('Suit selected: ');
+
 export default {
     components:{
         CardList,
@@ -25,7 +27,8 @@ export default {
     data(){
         return{
             cards: CardInfo,
-            suitSelect: 'Major'
+            suitSelect: 'Major',
+            cardPicked: false
         }
     },
     methods: {
@@ -35,6 +38,7 @@ export default {
         }
     } 
 }
+
 </script>
 
 <style scoped>
