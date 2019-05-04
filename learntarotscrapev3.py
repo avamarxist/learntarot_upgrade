@@ -52,22 +52,22 @@ titles[54:68] = [(title + " of Swords") for title in titles[54:68]]
 titles[69:83] = [(title + " of Pentacles") for title in titles[69:83]]
 
 
-scrape_df = pd.DataFrame(data=titles,columns=['Title'])
+scrape_df = pd.DataFrame(data=titles,columns=['title'])
 
 """ populate main scrape data """
 
 
-scrape_df['Links'] = [link.get('href') for link in page_soup.findAll('a', attrs={'href': re.compile(".htm")})][2:-5]
+scrape_df['links'] = [link.get('href') for link in page_soup.findAll('a', attrs={'href': re.compile(".htm")})][2:-5]
 # remove first 2 links (how-to) and last 5 links (navigation)
 
-scrape_df['Card ID'] = [link.split(sep='.')[0] for link in scrape_df['Links']]
+scrape_df['cardID'] = [link.split(sep='.')[0] for link in scrape_df['links']]
 
 suit_dic = {'m':'Major','t':'Suit','w':'Wands','c':'Cups','s':'Swords','p':'Pentacles'}
-scrape_df['Suit'] = [suit_dic[card[0]] for card in scrape_df['Card ID']]
+scrape_df['suit'] = [suit_dic[card[0]] for card in scrape_df['cardID']]
 
-scrape_df['Previous'] = [scrape_df['Card ID'][i-1] if (i > 0 and scrape_df['Suit'][i] == scrape_df['Suit'][i-1]) else '-' for i in scrape_df.index]
+scrape_df['prevCard'] = [scrape_df['cardID'][i-1] if (i > 0 and scrape_df['suit'][i] == scrape_df['suit'][i-1]) else '-' for i in scrape_df.index]
 
-scrape_df['Small Image'] = [card + 's.gif' if card[0]!='t' else '-' for card in scrape_df['Card ID']]
+scrape_df['smImg'] = [card + 's.gif' if card[0]!='t' else '-' for card in scrape_df['cardID']]
 
 ##################################################
 """
@@ -85,7 +85,7 @@ loop through each card
 actID = 0
 sactID = 0
 
-for card in scrape_df['Card ID']:
+for card in scrape_df['cardID']:
     if card[0] == 't':
         actions.append('-')
         opp_raw.append('-')
@@ -149,7 +149,7 @@ for card in scrape_df['Card ID']:
 opposing = []
 reinforcing = []
 for i in scrape_df.index:
-    card_temp = scrape_df['Card ID'][i]
+    card_temp = scrape_df['cardID'][i]
     opp_soup = bs(opp_raw[i],"html.parser")
     re_soup = bs(re_raw[i],"html.parser")
     opp_search = opp_soup.find_all('a',attrs={'href':re.compile(".htm")})
@@ -166,8 +166,8 @@ for i in scrape_df.index:
     opposing.append(o_row)
     reinforcing.append(r_row)
 
-    # if scrape_df['Previous'][i] != '-':
-    #     related.append([card_temp, scrape_df['Previous'][i],'previous'])
+    # if scrape_df['prevCard'][i] != '-':
+    #     related.append([card_temp, scrape_df['prevCard'][i],'previous'])
 
     # key_soup = bs(scrape_df['Keywords'][i],"html.parser")
     # key_list = key_soup.find_all('b')
@@ -176,12 +176,12 @@ for i in scrape_df.index:
     #     key_text = str(key)[key_search.start():key_search.end()]
     #     keys.append([card_temp,key_text])
 
-scrape_df['Opposing'] = opposing
-scrape_df['Reinforcing'] = reinforcing
-scrape_df['Actions'] = actions
-scrape_df['Description'] = descs
+scrape_df['opposing'] = opposing
+scrape_df['reinforcing'] = reinforcing
+scrape_df['actions'] = actions
+scrape_df['description'] = descs
 
-scrape_cols = ['Card ID','Title','Suit','Links','Small Image','Opposing','Reinforcing','Previous', 'Actions', 'Description']
+scrape_cols = ['cardID','title','suit','links','smImg','opposing','reinforcing','prevCard', 'actions', 'description']
 scrape_df = scrape_df[scrape_cols]
 
 scrape_df.to_json(path_or_buf = 'www/tarot_cards.js', orient='records')

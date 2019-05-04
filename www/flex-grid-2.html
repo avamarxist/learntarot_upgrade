@@ -6,22 +6,40 @@
     <body>
         <div class="grid">
                 <div class="name"> CARD NAME </div>
-                <div class="act" id="act-1" v-on:click="isHidden = !isHidden"> ACTION 1 </div>
-                <div class="subaction" id="sact-1" v-for="sact in subacts" v-show='isHidden'> {{ sact.text }} </div>
-                <div class="act" id="act-2"> ACTION 2 </div>
-                <div class="subaction" id="sact-2"> SUBACT 2 <br> SUBACT 2 <br> SUBACT 2 </div>
-                <div class="act" id="act-3"> ACTION 3 </div>
-                <div class="subaction" id="sact-3"> SUBACT 3 <br> SUBACT 3 <br> SUBACT 3 </div>
+
+                <div class='actContainer' v-for='(action,index) in actions' :key='index'>
+                    <div class="act" id="act-1">  {{ actions[index].act.text }} </div>
+                    <li class="subaction" id="sact-1" v-for='sact in actions[index].subact' v-show=> {{ sact.text }} </li>
+                </div>
+
                 <div class="opposing">Recusandae tempora ab error omnis exercitationem illo accusamus esse sit ipsa accusantium iure, possimus ducimus quis consequuntur qui corporis nobis culpa repudiandae! Suscipit, debitis. Omnis delectus at vitae laborum quos?</div>
                 <div class="reinforcing">Dolorem saepe accusamus sed placeat porro ex, ab, vel eaque libero incidunt facilis delectus, iure odio dicta error consequuntur perspiciatis quasi? Corrupti incidunt quia asperiores quo magnam at minima laudantium?</div>
                 <div class="description">Dolor ad saepe, nemo fugit tempora autem est fugiat quis porro atque nam repellendus maxime neque voluptatem rerum amet odit aspernatur voluptates iusto eos laboriosam enim vel. Eius, debitis beatae!</div>
         </div>
     </body>
     <script>
-        var acts = [{text:'peepee'}, {text:'poopoo'}, {text:'kaka'}];
+        var actions = [
+            {
+                act:{text:'peepee'}, 
+                subact:[{text:'BB'},{text:'Khalil'}]
+            }, 
+            {
+                act: {text:'poopoo'}, 
+                subact: [{text:'Trinity'}]
+            } 
+        ];
         var subacts = [{text:'BB'}, {text:'Khalil'}, {text:'Trinity'}];
         var app = new Vue({
-                el: '.grid', data: {isHidden: false}
+                el: '.grid', data: {isHidden: false, actIndex:0}
             });
+        
+        // Vue.component('actContainer', {
+        //     data: function(){
+        //         return {
+        //             isHidden: false
+        //         }
+        //     },
+        //     template: '<div class="act"
+        // });
     </script>
 </html>

@@ -26,6 +26,7 @@ body {
 }
 #sact-1{
     grid-column: 1;
+    text-indent: 20px;
     /* grid-row: 3/5; */
 }
 #act-2{
