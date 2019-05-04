@@ -1,10 +1,10 @@
 <template>
     <div id='card-list'>
-        <ListButton v-for="card in filterSuit(cards,suit)" 
-                    v-bind:key="card.cardID" 
+        <ListButton v-for="(card,index) in filterSuit(cards,suit)" 
+                    v-bind:key="index" 
                     v-bind:title='card.title'
-                    v-bind:cardID='card.cardID'
-                    v-on:card-pick="$emit('card-pick')"> 
+                    v-bind:card='card'
+                    v-on:card-pick="$emit('card-pick',$event)"> 
         </ListButton>
         
     </div>

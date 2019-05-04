@@ -10,6 +10,7 @@ import CardSearch from '.\\components\\CardSearch.vue';
 import CardList from '.\\components\\CardList.vue';
 import SuitButton from '.\\components\\SuitButton.vue';
 import ListButton from '.\\components\\ListButton.vue';
+import CardScreen from '.\\components\\CardScreen.vue';
 
 console.log('hello');
 console.log(CardInfo);
@@ -22,7 +23,8 @@ export default {
     CardSearch,
     CardList,
     SuitButton,
-    ListButton
+    ListButton,
+    CardScreen
   },
   data(){
       return {

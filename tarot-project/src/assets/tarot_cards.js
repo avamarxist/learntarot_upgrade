@@ -1,4 +1,5 @@
 export const CardInfo = [{
+    "id":0,
     "cardID": "titlema",
     "title": "Major Arcana",
     "suit": "Suit",
@@ -10,6 +11,7 @@ export const CardInfo = [{
     "actions": "-",
     "description": "-"
 }, {
+    "id":1,
     "cardID": "maj00",
     "title": "0. The Fool",
     "suit": "Major",
@@ -33,6 +35,7 @@ export const CardInfo = [{
     }],
     "description": "As Card 0, the Fool lies at the beginning of the major arcana, but also somewhat apart from the other cards. In medieval courts, the court jester was someone who was not expected to follow the same rules as others. He could observe and then poke fun. This makes the Fool unpredictable and full of surprises. He reminds us of the unlimited potential and spontaneity inherent in every moment. There is a sense with this card that anything goes - nothing is certain or regular. The Fool adds the new and unfamiliar to a situation.The Fool also represents the complete faith that life is good and worthy of trust. Some might call the Fool too innocent, but his innocence sustains him and brings him joy. In readings, the Fool can signal a new beginning or change of direction - one that will guide you onto a path of adventure, wonder and personal growth. He also reminds you to keep your faith and trust your natural responses. If you are facing a decision or moment of doubt, the Fool tells you to believe in yourself and follow your heart no matter how crazy or foolish your impulses may seem.See also the Fool's Journey."
 }, {
+    "id":2,
     "cardID": "maj01",
     "title": "I. The Magician",
     "suit": "Major",
@@ -56,6 +59,7 @@ export const CardInfo = [{
     }],
     "description": "The Magician is the archetype of the active, masculine principle - the ultimate achiever. He symbolizes the power to tap universal forces and use them for creative purposes. Note his stance in the picture. He acts as a lightening rod - one arm extended up into the Divine for inspiration, the other pointing toward Earth to ground this potent energy. [note] His abilities appear magical at times because his will helps him achieve what seem to be miracles.What makes the Magician so powerful? First, he is not afraid to act. He believes in himself and is willing to put that belief on the line. He also knows what he intends to do and why. He doesn't hesitate because he understands his situation exactly. The Magician can focus with single-minded determination. As long as he remembers the divine source of his power, the Magician remains the perfect conduit for miracles. In a reading, the Magician implies that the primal forces of creativity are yours if you can claim your power and act with awareness and concentration. This card is a signal to act and act now, provided you understand exactly what you want and are committed to getting it. See also the Fool's Journey."
 }, {
+    "id":3,
     "cardID": "maj02",
     "title": "II. The High Priestess",
     "suit": "Major",
@@ -79,6 +83,7 @@ export const CardInfo = [{
     }],
     "description": "The High Priestess is the guardian of the unconscious. She sits in front of the thin veil of unawareness which is all that separates us from our inner landscape. She contains within herself the secrets of these realms and offers us the silent invitation, \"Be still and know that I am God.\"The High Priestess is the feminine principle that balances the masculine force of the Magician. The feminine archetype in the tarot is split between the High Priestess and the Empress. The High Priestess is the mysterious unknown that women often represent, especially in cultures that focus on the tangible and known. The Empress represents woman's role as the crucible of life. In readings, the High Priestess poses a challenge to you to go deeper - to look beyond the obvious, surface situation to what is hidden and obscure. She also asks you to recall the vastness of your potential and to remember the unlimited possibilities you hold within yourself. The High Priestess can represent a time of waiting and allowing. It is not always necessary to act to achieve your goals. Sometimes they can be realized through a stillness that gives desire a chance to flower within the fullness of time.See also the Fool's Journey."
 }, {
+    "id":4,
     "cardID": "maj03",
     "title": "III. The Empress",
     "suit": "Major",
@@ -102,6 +107,7 @@ export const CardInfo = [{
     }],
     "description": "The Empress and the High Priestess are the two halves of the female archetype in the major arcana. The Empress represents the fertile, life-giving Mother who reigns over the bounty of nature and the rhythms of the Earth. From her comes all the pleasures and joys of the senses and the abundance of new life in all its forms. The Empress encourages you to strengthen your connections with the natural world which is the ground of our being. Too often false sophistications and pleasures take us far from our roots. Let the Empress remind you to keep your feet firmly planted in the Earth.In readings the Empress can refer to any aspect of Motherhood. She can be an individual mother, but as a major arcana card, she also goes beyond the specifics of mothering to its essence - the creation of life and its sustenance through loving care and attention.The Empress can also represent lavish abundance of all kinds. She offers a cornucopia of delights, especially those of the senses - food, pleasure and beauty. She can suggest material reward, but only with the understanding that riches go with a generous and open spirit. The Empress asks you to embrace the principle of life and enjoy its bountiful goodness.See also the Fool's Journey."
 }, {
+    "id":5,
     "cardID": "maj04",
     "title": "IV. The Emperor",
     "suit": "Major",
@@ -125,6 +131,7 @@ export const CardInfo = [{
     }],
     "description": "The figure of the Emperor says much about the essential qualities of this card. We see a stern, commanding figure seated on a stone-slab throne. His back is straight, and his eyes meet ours directly. He is confident of his complete authority to rule.The Emperor represents structure, order and regulation - forces to balance the free-flowing, lavish abundance of the Empress. He advocates a four-square world where trains are on time, games are played by rules, and commanding officers are respected. In chaotic situations, the Emperor can indicate the need for organization. Loose ends should be tied up, and wayward elements, harnessed. In situations that are already over-controlled, he suggests the confining effect of those constraints.The Emperor can represent an encounter with authority or the assumption of power and control. As the regulator, he is often associated with legal matters, disciplinary actions, and officialdom in all its forms. He can also stand for an individual father or archetypal Father in his role as guide, protector and provider.See also the Fool's Journey."
 }, {
+    "id":6,
     "cardID": "maj05",
     "title": "V. The Hierophant",
     "suit": "Major",
@@ -148,6 +155,7 @@ export const CardInfo = [{
     }],
     "description": "Except in rare cases, every human grows and develops within a culture. We learn by living with others. The Hierophant represents such official learning, especially in groups. A Hierophant is someone who interprets secret knowledge. On Card 5 we see a religious figure in a formal church setting. He is wearing the elaborate vestments of his office. His task is to bring the two initiates into the church so they can take up their appointed roles.Besides churches, there are schools, clubs, teams, companies, and societies. The Hierophant represents all of these because his realm is structured groups with rules and assigned roles. Such environments emphasize belief systems - facts, rules, procedures, and ritual. Members are rewarded for following conventions. They develop a group identity. The Hierophant is one of three cards that focuses on the group. (The 3 of Cups and the 3 of Pentacles are the others.)In readings, the Hierophant often represents learning with experts or knowledgeable teachers. This card also stands for institutions and their values. The Hierophant is a symbol of the need to conform to rules or fixed situations. His appearance in a reading can show that you are struggling with a force that is not innovative, free-spirited or individual. Groups can be enriching or stifling, depending on circumstances. Sometimes we need to follow a program or embrace tradition, other times, we need to trust ourselves.See also the Fool's Journey."
 }, {
+    "id":7,
     "cardID": "maj06",
     "title": "VI. The Lovers",
     "suit": "Major",
