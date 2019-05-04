@@ -14,7 +14,6 @@ import SuitButton from '.\\SuitButton.vue';
 import ListButton from '.\\ListButton.vue';
 
 const Details = {};
-console.log('Suit selected: ');
 
 export default {
     components:{
