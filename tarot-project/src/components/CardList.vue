@@ -1,13 +1,22 @@
 <template>
     <div id='card-list'>
-        <button v-for="card in filterSuit(cards,suit)" v-bind:key="card.cardID">{{card.title}}</button>
-
+        <ListButton v-for="card in filterSuit(cards,suit)" 
+                    v-bind:key="card.cardID" 
+                    v-bind:title='card.title'
+                    v-bind:cardID='card.cardID'> 
+        </ListButton>
+        
     </div>
 </template>
 
 <script>
 import {CardInfo} from '..\\assets\\tarot_cards.js';
+import ListButton from '.\\ListButton.vue';
+
 export default {
+    components:{
+        ListButton
+    },
     name:'CardList',
     props:['suit'],
     data(){

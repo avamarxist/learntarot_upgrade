@@ -9,6 +9,7 @@ import {CardInfo} from '.\\assets\\tarot_cards.js';
 import CardSearch from '.\\components\\CardSearch.vue';
 import CardList from '.\\components\\CardList.vue';
 import SuitButton from '.\\components\\SuitButton.vue';
+import ListButton from '.\\components\\ListButton.vue';
 
 console.log('hello');
 console.log(CardInfo);
@@ -20,7 +21,8 @@ export default {
   components: {
     CardSearch,
     CardList,
-    SuitButton
+    SuitButton,
+    ListButton
   },
   data(){
       return {

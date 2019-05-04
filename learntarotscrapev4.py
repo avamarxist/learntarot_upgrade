@@ -47,10 +47,10 @@ for head in page_soup.findAll('b'):             #loop through each <b> tag
         titles.append(title_text)
 
 
-titles[24:38] = [(title + " of Wands") for title in titles[24:38]]
-titles[39:53] = [(title + " of Cups") for title in titles[39:53]]
-titles[54:68] = [(title + " of Swords") for title in titles[54:68]]
-titles[69:83] = [(title + " of Pentacles") for title in titles[69:83]]
+# titles[24:38] = [(title + " of Wands") for title in titles[24:38]]
+# titles[39:53] = [(title + " of Cups") for title in titles[39:53]]
+# titles[54:68] = [(title + " of Swords") for title in titles[54:68]]
+# titles[69:83] = [(title + " of Pentacles") for title in titles[69:83]]
 
 
 scrape_df = pd.DataFrame(data=titles,columns=['title'])
@@ -68,7 +68,7 @@ scrape_df['suit'] = [suit_dic[card[0]] for card in scrape_df['cardID']]
 
 scrape_df['prevCard'] = [scrape_df['cardID'][i-1] if (i > 0 and scrape_df['suit'][i] == scrape_df['suit'][i-1]) else '-' for i in scrape_df.index]
 
-scrape_df['smImg'] = [card + 's.gif' if card[0]!='t' else '-' for card in scrape_df['cardID']]
+scrape_df['imgPath'] = [card + '.gif' if card[0]!='t' else '-' for card in scrape_df['cardID']]
 
 ##################################################
 """
@@ -185,4 +185,4 @@ scrape_df['description'] = descs
 scrape_cols = ['cardID','title','suit','links','smImg','opposing','reinforcing','prevCard', 'actions', 'description']
 scrape_df = scrape_df[scrape_cols]
 
-scrape_df.to_json(path_or_buf = 'www/tarot_cards.js', orient='records')
+scrape_df.to_json(path_or_buf = 'src/assets/tarot_cards.js', orient='records')

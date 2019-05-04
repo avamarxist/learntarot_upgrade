@@ -10,12 +10,15 @@
 import {CardInfo} from '..\\assets\\tarot_cards.js';
 import CardList from '.\\CardList.vue';
 import SuitButton from '.\\SuitButton.vue';
+import ListButton from '.\\ListButton.vue';
+
 const Details = {};
 console.log('Suit selected: ')
 export default {
     components:{
         CardList,
-        SuitButton
+        SuitButton,
+        ListButton
     },
     name: "CardSearch",
     props: [],
