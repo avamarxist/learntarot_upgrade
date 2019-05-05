@@ -1,21 +1,24 @@
 <template>
     <div>
         <h2> {{card.title}} </h2>
-        <p> {{card.description}} </p>
+        <ActionsContainer v-bind:card="card" />
+        <br>
+        <DescriptionContainer v-bind:card="card" />
+        
     </div>
 </template>
 
 <script>
-import {CardInfo} from '..\\assets\\tarot_cards.js';
+import ActionsContainer from ".\\ActionsContainer.vue";
+import DescriptionContainer from ".\\DescriptionContainer.vue";
 
 export default {
     name:"CardScreen",
+    components:{
+        ActionsContainer,
+        DescriptionContainer
+    },
     props: ['card'],
-    data(){
-        return{
-            cards: CardInfo
-        }
-    }
 }
 </script>
 

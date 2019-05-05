@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <CardSearch v-bind:cards = "cardData" />
+    <CardSearch />
   </div>
 </template>
 
@@ -11,6 +11,9 @@ import CardList from '.\\components\\CardList.vue';
 import SuitButton from '.\\components\\SuitButton.vue';
 import ListButton from '.\\components\\ListButton.vue';
 import CardScreen from '.\\components\\CardScreen.vue';
+import ActionsContainer from '.\\components\\ActionsContainer';
+import Actions from '.\\components\\Actions';
+import DescriptionContainer from '.\\components\\DescriptionContainer';
 
 console.log('hello');
 console.log(CardInfo);
@@ -24,13 +27,11 @@ export default {
     CardList,
     SuitButton,
     ListButton,
-    CardScreen
-  },
-  data(){
-      return {
-        cardData: CardInfo
-      }
-    }
+    CardScreen,
+    ActionsContainer,
+    Actions,
+    DescriptionContainer
+  }
 }
 </script>
 

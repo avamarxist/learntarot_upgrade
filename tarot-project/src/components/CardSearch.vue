@@ -1,16 +1,19 @@
 <template>
     <div id='cardlist' >
-        <h1> Sexy Unique Internet Tarot </h1>
-        <SuitButton v-on:change-suit="suitSelect=$event"></SuitButton><br>
-        <CardList v-bind:suit="suitSelect" v-on:card-pick="cardPick($event)" v-show="cardPicked === false" />
+        <div id="heading" v-if="cardPicked === false">
+            <h1> Sexy Unique Internet Tarot  </h1>
+            <SuitButton v-on:change-suit="suitSelect=$event"></SuitButton><br>
+            <CardList v-bind:suit="suitSelect" v-on:card-pick="cardPick($event)"  />
+        </div>
         
-        <div v-show="cardPicked===true">
+        
+        <div v-if="cardPicked===true">
             <!-- <img src="..\\assets\\pkn.png" width=50 v-on:click="cardPicked=false">  -->
             <br>
             <button v-on:click="cardPicked=false">Go back to card selection</button>
 
         </div>
-        <CardScreen v-bind:card="getCard()" v-show="cardPicked === true" />
+        <CardScreen v-bind:card="getCard()" v-if="cardPicked === true" />
     </div>   
 </template>
 
