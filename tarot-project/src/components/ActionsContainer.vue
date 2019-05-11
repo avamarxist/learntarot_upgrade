@@ -9,7 +9,7 @@ import Actions from '.\\Actions.vue';
 
 export default {
     name:"ActionsContainer",
-    components:{
+    components:{ 
         Actions
     },
     props:['card']

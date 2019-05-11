@@ -14,7 +14,7 @@
 
         </div>
         <CardScreen v-bind:card="getCard()" v-if="cardPicked === true" />
-    </div>   
+    </div>
 </template>
 
 <script>
