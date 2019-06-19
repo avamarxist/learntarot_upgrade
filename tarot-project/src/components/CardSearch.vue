@@ -1,9 +1,8 @@
 <template>
     <div id='cardlist' >
         <div id="heading" v-if="cardPicked === false">
-            <h1> Sexy Unique Internet Tarot  </h1>
             <SuitButton v-on:change-suit="suitSelect=$event"></SuitButton><br>
-            <CardList v-bind:suit="suitSelect" v-on:card-pick="cardPick($event)"  />
+            <!--  -->
         </div>
         
         
@@ -13,16 +12,16 @@
             <button v-on:click="cardPicked=false">Go back to card selection</button>
 
         </div>
-        <CardScreen v-bind:card="getCard()" v-if="cardPicked === true" />
+        
     </div>
 </template>
 
 <script>
-import {CardInfo} from '..\\assets\\tarot_cards.js';
-import CardList from '.\\CardList.vue';
-import SuitButton from '.\\SuitButton.vue';
-import ListButton from '.\\ListButton.vue';
-import CardScreen from '.\\CardScreen.vue';
+import {CardInfo} from '../assets/tarot_cards.js';
+import CardList from './CardList.vue';
+import SuitButton from './SuitButton.vue';
+import ListButton from './ListButton.vue';
+import CardScreen from './CardScreen.vue';
 
 const Details = {};
 

@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import Actions from '.\\Actions.vue';
+import Actions from './Actions.vue';
 
 export default {
     name:"ActionsContainer",
