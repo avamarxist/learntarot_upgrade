@@ -1,9 +1,10 @@
 <template>
   <div id="app">
     <h1>Sexy Unique Internet Tarot</h1>
-    <CardList v-bind:suit="lastClicked" v-on:card-pick="cardPick($event)"  />
+    <CardList v-bind:suit="lastClicked" v-on:card-pick="cardPick($event)" v-if="cardPicked === false && suitPicked === true" />
     <CardScreen v-bind:card="getCard()" v-if="cardPicked === true" />
-    <RadialMenu
+    <p>{{lastClicked}} </p>
+    <RadialMenu class="SuitMenu"
             style=" background-color: white;"
             :size="15"
             :itemSize="20"
@@ -15,7 +16,7 @@
                 v-for="(item, index) in suits" 
                 :key="index" 
                 style="background-color: white" 
-                @click='function(){handleClick(item)}'>
+                @change-suit='function(){handleClick(item)}'>
                 <span>{{item}}</span>
             </RadialMenuItem>
         </RadialMenu>
@@ -61,13 +62,17 @@ export default {
       lastClicked: 'Please select a suit',
       cards: CardInfo,
       suitSelect: 'Major',
+      suitPicked: false,
       cardPicked: false,
       cardSelect: ""
     }
   },
   methods: {
     handleClick(item) {
+      console.log("radial clicked");
       this.lastClicked = item;
+      this.suitPicked = true;
+      this.changeSuit(item);
     },
     changeSuit(newSuit){
         console.log("changeSuit has run");

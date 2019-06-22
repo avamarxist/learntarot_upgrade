@@ -41,7 +41,7 @@
 import RadialMenuItem from './RadialMenuItem';
 
 export default {
-    name: 'SuitMenu',
+    name: 'RadialMenu',
     props: {
         angleRestriction: {type:Number, default:180},
         size: { type: Number, default: 20 },
@@ -89,7 +89,7 @@ export default {
 			}
         },
         handleClick() {
-			this.$emit('click');
+			this.$emit('radialClick');
 			this.toggleMenu();
         },
         toggleMenu() {
