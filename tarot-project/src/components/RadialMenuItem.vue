@@ -12,7 +12,6 @@
 <style>
 .vue-radial-menu-item {
 	position: absolute;
-	border-radius: 50%;
 	box-sizing: border-box;
 	display: flex;
 	justify-content: center;

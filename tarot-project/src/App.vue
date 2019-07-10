@@ -1,7 +1,6 @@
 <template>
   <div id="app">
-    <h1>Sexy Unique Internet Tarot</h1>
-    <CardList v-bind:suit="lastClicked" v-on:card-pick="cardPick($event)" v-if="cardPicked === false && suitPicked === true" />
+    <h1>Sexy Unique Internet Tarot</h1>   
     <CardScreen v-bind:card="getCard()" v-if="cardPicked === true" />
     <p>{{lastClicked}} </p>
     <RadialMenu class="SuitMenu"
@@ -10,16 +9,18 @@
             :itemSize="20"
             :radius="20"
             :rotate="90"
-            :angle-restriction="360">
+            :angle-restriction="360"
+            v-on:card-list-toggle="function(){this.suitPicked=false;}">
 
             <RadialMenuItem 
                 v-for="(item, index) in suits" 
                 :key="index" 
                 style="background-color: white" 
                 @change-suit='function(){handleClick(item)}'>
-                <span>{{item}}</span>
+                <button>{{item}}</button>
             </RadialMenuItem>
         </RadialMenu>
+        <CardList v-bind:suit="lastClicked" v-on:card-pick="cardPick($event)" v-if="cardPicked === false && suitPicked === true" />
   </div>
 </template>
 
@@ -86,6 +87,9 @@ export default {
         let pickedCard = this.cards.filter(card=>card.cardID==this.cardSelect);
         console.log(pickedCard); 
         return pickedCard[0];    
+    },
+    listClose(){
+        this.suitPicked = false;
     }
   }
 }
@@ -96,6 +100,8 @@ export default {
   font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  display:flex;
+  flex-direction:column;
   text-align: center;
   color: #2c3e50;
   margin: 0;

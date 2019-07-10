@@ -100,6 +100,7 @@ export default {
 			} else {
 				this.isOpen = true;
 				this.$emit('open');
+				this.$emit('card-list-toggle');
 			}
         },
         setChildProps() {
