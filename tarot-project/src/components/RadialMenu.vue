@@ -12,7 +12,7 @@
 
 <style scoped>
 .radial-menu-wrapper {
-	position:absolute;
+	position:relative;
 	user-select: none;
 	border-radius: 50%;
 	font-size: 32px;
@@ -51,14 +51,12 @@ export default {
 		open: { type: Boolean, default: undefined }     // event variable to open or close the menu?
     },
     data(){
-        const { size } = this;
-        const manualMode = typeof this.open !== 'undefined';
+		const { size } = this;
+		const manualMode = typeof this.open !== 'undefined';
         return {
+			menuHeight: 0,
             manualMode,
             isOpen:false,       // open/closed state variable
-            wrapperStyle: {
-				margin: (30 - size/2) + 'vw ' + (50-size/2) + 'vw'
-			},
 			containerStyle:{
 				width: size + 'vw',
 				height: size + 'vw'
@@ -71,7 +69,11 @@ export default {
             const {open, manualMode, isOpen} = this;
             return manualMode ? open : isOpen;
 		},
-    },
+		wrapperStyle() {
+			let { size, menuHeight } = this;
+			return 'margin: ' + menuHeight + 'vw ' + (50-size/2) + 'vw';
+		}
+	},
     mounted() {
 		document.addEventListener('click', this.closeMenuEvent);
 		this.setChildProps();
@@ -94,6 +96,7 @@ export default {
         },
         toggleMenu() {
 			if (this.manualMode) return;
+			this.setMargin();
 			if (this.isOpen) {
 				this.isOpen = false;
 				this.$emit('close');
@@ -102,7 +105,15 @@ export default {
 				this.$emit('open');
 				this.$emit('card-list-toggle');
 			}
-        },
+		},
+		setMargin(){
+			if(!this.isOpen){
+				this.menuHeight = this.radius + this.itemSize/2;
+			} else{
+				this.menuHeight = 0;
+			}
+			console.log('menu height: ' + this.menuHeight);
+		},
         setChildProps() {
 			// Manually add prop data to the items
 			const items = this.$slots.default.map(s => s.componentOptions.propsData);

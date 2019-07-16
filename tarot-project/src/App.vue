@@ -1,16 +1,14 @@
 <template>
   <div id="app">
-    <h1>Sexy Unique Internet Tarot</h1>   
-    <CardScreen v-bind:card="getCard()" v-if="cardPicked === true" />
-    <p>{{lastClicked}} </p>
+    <h1>{{lastClicked}}</h1>   
     <RadialMenu class="SuitMenu"
             style=" background-color: white;"
             :size="15"
-            :itemSize="20"
+            :itemSize="15"
             :radius="20"
             :rotate="90"
             :angle-restriction="360"
-            v-on:card-list-toggle="function(){this.suitPicked=false;}">
+            v-on:open="function(){this.suitPicked=false; this.cardPicked = false;}">
 
             <RadialMenuItem 
                 v-for="(item, index) in suits" 
@@ -19,8 +17,9 @@
                 @change-suit='function(){handleClick(item)}'>
                 <button>{{item}}</button>
             </RadialMenuItem>
-        </RadialMenu>
-        <CardList v-bind:suit="lastClicked" v-on:card-pick="cardPick($event)" v-if="cardPicked === false && suitPicked === true" />
+    </RadialMenu>
+    <CardScreen v-bind:card="getCard()" v-if="cardPicked === true" />
+    <CardList v-bind:suit="lastClicked" v-on:card-pick="cardPick($event)" v-if="cardPicked === false && suitPicked === true" />
   </div>
 </template>
 
@@ -36,11 +35,6 @@ import Actions from './components/Actions';
 import DescriptionContainer from './components/DescriptionContainer';
 import RadialMenu from './components/RadialMenu';
 import RadialMenuItem from './components/RadialMenuItem'
-
-console.log('hello');
-console.log(CardInfo);
-
-// var Cards = JSON.parse(CardInfo);
 
 export default {
   name: 'app',
@@ -73,6 +67,7 @@ export default {
       console.log("radial clicked");
       this.lastClicked = item;
       this.suitPicked = true;
+      this.cardPicked = false;
       this.changeSuit(item);
     },
     changeSuit(newSuit){
@@ -82,6 +77,7 @@ export default {
     cardPick(cardID){
         this.cardPicked = true;
         this.cardSelect = cardID;
+        this.suitPicked = false;
     },
     getCard(){
         let pickedCard = this.cards.filter(card=>card.cardID==this.cardSelect);

@@ -33,7 +33,7 @@ export default {
         },
         cardCount(cards){
             return cards.filter(card=>card.suit === suit).length;
-        }
+        },
     }
 }
 </script>

@@ -1,6 +1,8 @@
 <template>
     <div class='button-container'>
-        <button v-on:click="$emit('card-pick',card.cardID)"  >{{card.title}} </button>
+        <!-- <button v-on:click="$emit('card-pick',card.cardID)"  >{{ imgPath }} </button> -->
+        <img :src='imgPath(card)' height="50" width="50" @click="$emit('card-pick',card.cardID)">
+        <p font-size='4pt'>{{ card.title }} </p>
     </div>
 </template>
 
@@ -11,6 +13,19 @@ export default {
     data:function(){
         return {
             curid: this.$vnode.key
+        }
+    },
+    computed:{
+        imgSrc: function(){
+            let id = this.card.cardID;
+            return '../assets/' + id.slice(0,1) + '/' + id.slice(1,id.length) + '.png';
+        }
+    },
+    methods:{
+        imgPath(card){
+            let id = card.cardID;
+
+            return require('../assets/' + id.slice(0,1) + '/' + id.slice(1,id.length) + '.png');
         }
     }
 }
