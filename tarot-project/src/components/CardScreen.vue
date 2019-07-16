@@ -9,8 +9,8 @@
 </template>
 
 <script>
-import ActionsContainer from ".\\ActionsContainer.vue";
-import DescriptionContainer from ".\\DescriptionContainer.vue";
+import ActionsContainer from "./ActionsContainer.vue";
+import DescriptionContainer from "./DescriptionContainer.vue";
 
 export default {
     name:"CardScreen",

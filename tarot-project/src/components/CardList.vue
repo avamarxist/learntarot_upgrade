@@ -1,9 +1,10 @@
 <template>
     <div id='card-list'>
         <ListButton v-for="(card,index) in filterSuit(cards,suit)" 
-                    v-bind:key="index" 
-                    v-bind:title='card.title'
-                    v-bind:card='card'
+                    :key="index"
+                    :ckey="index" 
+                    :card='card'
+                    :count='filterSuit(cards,suit).length'
                     v-on:card-pick="$emit('card-pick',$event)"> 
         </ListButton>
         
@@ -11,8 +12,8 @@
 </template>
 
 <script>
-import {CardInfo} from '..\\assets\\tarot_cards.js';
-import ListButton from '.\\ListButton.vue';
+import {CardInfo} from '../assets/tarot_cards.js';
+import ListButton from './ListButton.vue';
 
 export default {
     components:{
@@ -29,7 +30,10 @@ export default {
     methods:{
         filterSuit(cards, suit){
             return cards.filter(card => card.suit===suit);
-        }
+        },
+        cardCount(cards){
+            return cards.filter(card=>card.suit === suit).length;
+        },
     }
 }
 </script>
@@ -37,11 +41,10 @@ export default {
 <style scoped>
 #card-list {
     display:flex;
-    flex-direction:column;
+    flex-direction:row;
+    flex-wrap:wrap;
+    align-items:stretch;
 }
-button {
-    font-size:25;
-}
+
 
 </style>
-
